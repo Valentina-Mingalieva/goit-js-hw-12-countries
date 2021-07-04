@@ -7,7 +7,6 @@ import { defaultModules } from '../node_modules/@pnotify/core/dist/PNotify.js';
 import "@pnotify/core/dist/PNotify.css";
 import "@pnotify/core/dist/BrightTheme.css";
 defaultModules.set(PNotifyMobile, {});
-import '@pnotify/core/dist/BrightTheme.css';
 import { alert, error } from '@pnotify/core';
 
 const debounce = require('lodash.debounce');
@@ -28,7 +27,7 @@ function onInputChange() {
 
 function renderCountries(countries) {
   if (countries.length > 1 && countries.length <= 10) {
-    list.appendChild(data);
+    list.appendChild(countries);
   } else if (countries.length > 10) {
     alert({ text: 'To many matches found. Please enter a more specific query!' });
   } else {
