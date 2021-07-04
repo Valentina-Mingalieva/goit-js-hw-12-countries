@@ -3,7 +3,7 @@ body {
 }
 
 .main-container {
-  width: 1200px;
+  max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
   text-align: center;
@@ -21,7 +21,7 @@ body {
 .countryCard {
   display: flex;
   flex-direction: row;
-  border: 2px solid violet;
+  padding: 10px;
 }
 
 .info-container {

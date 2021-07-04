@@ -7,7 +7,7 @@ import renderListTemplate from './partials/renderListTemplate.hbs';
 
 import * as PNotifyMobile from '../node_modules/@pnotify/mobile/dist/PNotifyMobile.js';
 import { defaultModules } from '../node_modules/@pnotify/core/dist/PNotify.js';
-import { alert } from '@pnotify/core';
+import { alert, error } from '@pnotify/core';
 import * as Confirm from "@pnotify/confirm";
 import "@pnotify/confirm/dist/PNotifyConfirm.css";
 import "@pnotify/core/dist/PNotify.css";
@@ -26,7 +26,7 @@ function onInputChange() {
 
   fetchCountries(input.value)
     .then(renderCountries)
-    .catch()
+    .catch(error)
     .finally()
 }
 
@@ -34,14 +34,20 @@ function renderCountries(countries) {
   if (countries.length > 1 && countries.length <= 10) {
     renderList(countries);
   } else if (countries.length > 10) {
-    alert({ text: 'Too many matches found. Please enter a more specific query!' });
+    alert({
+      text: 'Too many matches found. Please enter a more specific query!',
+      width: '400px',
+      animateSpeed: 'fast',
+      delay: 500
+    })
   } else {
     renderCountry(countries);
   }
 }
-  
+
 function renderCountry(country) {
   countryContainer.insertAdjacentHTML('beforeend', countryTemplate(country));
+  input.value = '';
 }
 
 function renderList(countries) {
