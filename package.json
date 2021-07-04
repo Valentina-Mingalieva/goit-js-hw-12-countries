@@ -16,7 +16,7 @@
   "author": "Valentina Mingalieva <valentina.mingalieva@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Valentina-Mingalieva/goit-js-hw-12-countries"
+    "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",

@@ -17,3 +17,19 @@ body {
   margin: 45px auto;
   width: 300px;
 }
+
+.countryCard {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid violet;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+p {
+  color: blueviolet;
+}
